@@ -11,7 +11,7 @@ RUN  apk add --no-cache --virtual .build-deps \
         g++ \
         libffi-dev \
         openssl-dev \
-        && wget https://codeload.github.com/xiyangxixian/soar-web/zip/master -O /home/soar-web-master.zip \
+        && wget https://codeload.github.com/yompc/soar-web/zip/master -O /home/soar-web-master.zip \
         && cd /home/ && unzip soar-web-master.zip&& cd soar-web-master \
         && pip install -r requirement.txt && apk del .build-deps && rm -rf /home/soar-web-master.zip && rm -rf /tmp/*
 RUN chmod -R 755 /home/soar-web-master
