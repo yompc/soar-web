@@ -11,10 +11,10 @@ RUN  apk add --no-cache --virtual .build-deps \
         g++ \
         libffi-dev \
         openssl-dev \
-        && wget https://codeload.github.com/yompc/soar-web/zip/xmkj -O /home/soar-web-master.zip \
-        && cd /home/ && unzip soar-web-master.zip&& cd soar-web-master \
-        && pip install -r requirement.txt && apk del .build-deps && rm -rf /home/soar-web-master.zip && rm -rf /tmp/*
-RUN chmod -R 755 /home/soar-web-master
-WORKDIR  /home/soar-web-master
+        && wget https://codeload.github.com/yompc/soar-web/zip/xmkj -O /home/soar-web-xmkj.zip \
+        && cd /home/ && unzip soar-web-xmkj.zip&& cd soar-web-xmkj \
+        && pip install -r requirement.txt && apk del .build-deps && rm -rf /home/soar-web-xmkj.zip && rm -rf /tmp/*
+RUN chmod -R 755 /home/soar-web-xmkj
+WORKDIR  /home/soar-web-xmkj
 EXPOSE 5077
-CMD ["python","/home/soar-web-master/soar-web.py"]
+CMD ["python","/home/soar-web-xmkj/soar-web.py"]
